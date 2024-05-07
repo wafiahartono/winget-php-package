@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.6.0.schema.json
+
+PackageIdentifier: PHP.PHP.7.4
+PackageVersion: 7.4.33
+InstallerType: zip
+NestedInstallerType: portable
+NestedInstallerFiles:
+  - RelativeFilePath: php.exe
+    PortableCommandAlias: php74
+ReleaseDate: 2022-11-02
+Installers:
+  - Architecture: x86
+    InstallerUrl: https://windows.php.net/downloads/releases/php-7.4.33-nts-Win32-vc15-x86.zip
+    InstallerSha256: 3719efc430c3b82cf809ff1b4bb7d720e388f793b1e1857e4d892c62fa950b68
+  - Architecture: x64
+    InstallerUrl: https://windows.php.net/downloads/releases/php-7.4.33-nts-Win32-vc15-x64.zip
+    InstallerSha256: 14ae3250d4447c8ccfc4c45a70d90adfbcd61e728d85f0be56a7ddf8f9c8aace
+ManifestType: installer
+ManifestVersion: 1.6.0

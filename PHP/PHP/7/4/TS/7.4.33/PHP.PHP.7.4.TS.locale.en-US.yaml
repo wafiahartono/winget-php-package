@@ -1,0 +1,27 @@
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.6.0.schema.json
+
+PackageIdentifier: PHP.PHP.7.4.TS
+PackageVersion: 7.4.33
+PackageLocale: en-US
+Publisher: The PHP Group
+PublisherUrl: https://www.php.net/
+PublisherSupportUrl: https://www.php.net/support
+Author: The PHP Group
+PackageName: PHP 7.4 TS
+PackageUrl: https://windows.php.net/
+License: PHP-3.01
+LicenseUrl: https://raw.githubusercontent.com/php/php-src/PHP-7.4.33/LICENSE
+ShortDescription: A popular general-purpose scripting language that is especially suited to web development.
+Moniker: php74ts
+Tags:
+  - php
+  - php-7
+  - programming-language
+  - scripting-language
+  - web
+ReleaseNotesUrl: https://www.php.net/ChangeLog-7.php#PHP_7_4
+Documentations:
+  - DocumentLabel: Manual
+    DocumentUrl: https://www.php.net/manual/en/
+ManifestType: defaultLocale
+ManifestVersion: 1.6.0

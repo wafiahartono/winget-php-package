@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.6.0.schema.json
+
+PackageIdentifier: $PackageID
+PackageVersion: $VersionFull
+InstallerType: zip
+NestedInstallerType: portable
+NestedInstallerFiles:
+  - RelativeFilePath: php.exe
+    PortableCommandAlias: $Moniker
+ReleaseDate: $ReleaseDate
+Installers:
+  - Architecture: x86
+    InstallerUrl: $InstallerUrlx86
+    InstallerSha256: $InstallerSha256x86
+  - Architecture: x64
+    InstallerUrl: $InstallerUrlx64
+    InstallerSha256: $InstallerSha256x64
+ManifestType: installer
+ManifestVersion: 1.6.0

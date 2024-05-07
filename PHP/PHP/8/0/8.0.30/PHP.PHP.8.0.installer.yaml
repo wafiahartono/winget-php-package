@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.6.0.schema.json
+
+PackageIdentifier: PHP.PHP.8.0
+PackageVersion: 8.0.30
+InstallerType: zip
+NestedInstallerType: portable
+NestedInstallerFiles:
+  - RelativeFilePath: php.exe
+    PortableCommandAlias: php80
+ReleaseDate: 2023-09-01
+Installers:
+  - Architecture: x86
+    InstallerUrl: https://windows.php.net/downloads/releases/php-8.0.30-nts-Win32-vs16-x86.zip
+    InstallerSha256: b649889ac73add91c02ec7f6fdb9182f148cfa3181761e32a1be02a3b1d85100
+  - Architecture: x64
+    InstallerUrl: https://windows.php.net/downloads/releases/php-8.0.30-nts-Win32-vs16-x64.zip
+    InstallerSha256: dfb70498ffa2c617f2f655a155564697e3c9cca41709938fd1a5997d1d5b0785
+ManifestType: installer
+ManifestVersion: 1.6.0

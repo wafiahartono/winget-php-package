@@ -1,0 +1,27 @@
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.6.0.schema.json
+
+PackageIdentifier: PHP.PHP.8.3
+PackageVersion: 8.3.7
+PackageLocale: en-US
+Publisher: The PHP Group
+PublisherUrl: https://www.php.net/
+PublisherSupportUrl: https://www.php.net/support
+Author: The PHP Group
+PackageName: PHP 8.3
+PackageUrl: https://windows.php.net/
+License: PHP-3.01
+LicenseUrl: https://raw.githubusercontent.com/php/php-src/PHP-8.3.7/LICENSE
+ShortDescription: A popular general-purpose scripting language that is especially suited to web development.
+Moniker: php83
+Tags:
+  - php
+  - php-8
+  - programming-language
+  - scripting-language
+  - web
+ReleaseNotesUrl: https://www.php.net/ChangeLog-8.php#8.3.7
+Documentations:
+  - DocumentLabel: Manual
+    DocumentUrl: https://www.php.net/manual/en/
+ManifestType: defaultLocale
+ManifestVersion: 1.6.0

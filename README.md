@@ -16,7 +16,7 @@ Before installing packages from local manifest files, enable the `LocalManifestF
 To install a PHP package, execute the following command within this repository's root directory:
 
 ```powershell
-winget install --manifest PHP\PHP\8\3\8.3.6   # Installs PHP version 8.3.6
+winget install --manifest manifests\8\3\8.3.6   # Installs PHP version 8.3.6
 ```
 
 The `--manifest` parameter accepts a path to the directory containing the package manifest files.
@@ -26,7 +26,7 @@ The `--manifest` parameter accepts a path to the directory containing the packag
 Alternatively, create a junction that points to the latest version of a package manifest to simplify the installation command:
 
 ```powershell
-New-Item -ItemType Junction PHP.PHP.8.3 -Target (Resolve-Path .\PHP\PHP\8\3\8.3.6\)
+New-Item -ItemType Junction PHP.PHP.8.3 -Target (Resolve-Path .\manifests\8\3\8.3.6\)
 ```
 
 Then, install the package as follows:
@@ -41,26 +41,26 @@ winget install --manifest PHP.PHP.8.3
 
 > Requires PowerShell 7+.
 
-The `BuildManifest.ps1` PowerShell script, located in the `BuildManifest\PHP.PHP` folder, provides a functionality to automatically build PHP package manifests.
+The `BuildManifest.ps1` PowerShell script provides a functionality to automatically build PHP package manifests.
 
 This script retrieves PHP release information from [windows.php.net](https://windows.php.net/downloads/releases/releases.json) including supported PHP versions, binary download links, and corresponding SHA256 checksums.
 
-The script uses template manifest files (`BuildManifest\PHP.PHP\template*.yaml`) to build the manifests by substituting placeholders (prefixed by `$`) with the correct values obtained from the release information.
+The script uses template manifest files (`templates\template.*.yaml`) to build the manifests by substituting placeholders (prefixed by `$`) with the correct values obtained from the release information.
 
 To use the script, call it in a PowerShell session from the root of this repository.
 
 ```powershell
-.\BuildManifest\PHP.PHP\BuildManifest.ps1
+.\BuildManifest.ps1
 ```
 ##### Parameters
 
-###### `-RepositoryPath`
+###### `-OutDir`
 
-Optional parameter to specify the repository root path. Defaults to the current working directory.
+Optional parameter to specify the directory path where the output manifests will be stored. Defaults to `manifests`.
 
 ###### `-CreateLinks`
 
-Optional parameter to create junctions for the latest version of the package manifests, named with the package ID. The junctions will be placed in the `-RepositoryPath` and replaces existing junction.
+Optional parameter to create junctions for the latest version of the package manifests, named with the package ID. These junctions are generated within the current working directory, replacing any existing ones.
 
 > Currently, this parameter cannot be used separately. Calling the script with this parameter will also build package manifests, thus replacing any existing manifest files.
 
@@ -71,20 +71,18 @@ Optional parameter to create junctions for the latest version of the package man
 NTS builds are placed under the default identifier (without "NTS"), while TS builds include a "TS" accessory.
 
 ```
-Entity          Value                  Build
------------------------------------------------
-Directory       PHP\PHP\8\3\8.3.6      NTS
-Directory       PHP\PHP\8\3\TS\8.3.6   TS
+Entity          Value                    Build
+----------------------------------------------
+Directory       manifests\8\3\8.3.6      NTS
+Directory       manifests\8\3\TS\8.3.6   TS
 
-Package ID      PHP.PHP.8.3            NTS
-Package ID      PHP.PHP.8.3.TS         TS
+Package ID      PHP.PHP.8.3              NTS
+Package ID      PHP.PHP.8.3.TS           TS
 
-Command alias   php83                  NTS
-Command alias   php83ts                TS
+Command alias   php83                    NTS
+Command alias   php83ts                  TS
 ```
 
 ## Limitations
 
 This repository only provides manifests for the latest supported version of PHP at the time of creation and doesn't include older releases.
-
-The installer download links for the binaries will stop working when a new version becomes available. This occurs on the provider server.

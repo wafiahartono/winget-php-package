@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.6.0.schema.json
+
+PackageIdentifier: PHP.PHP.8.2.TS
+PackageVersion: 8.2.19
+InstallerType: zip
+NestedInstallerType: portable
+NestedInstallerFiles:
+  - RelativeFilePath: php.exe
+    PortableCommandAlias: php82ts
+ReleaseDate: 2024-05-08
+Installers:
+  - Architecture: x86
+    InstallerUrl: https://windows.php.net/downloads/releases/php-8.2.19-Win32-vs16-x86.zip
+    InstallerSha256: fd881cf2694230df501923835e567aef17b7d3fa50f04f6bc8d04b52c4587dd1
+  - Architecture: x64
+    InstallerUrl: https://windows.php.net/downloads/releases/php-8.2.19-Win32-vs16-x64.zip
+    InstallerSha256: f94c42da494dc96fa10d5e0a2a97d422380ea32158be1faa3bb3c86ef50e7597
+ManifestType: installer
+ManifestVersion: 1.6.0

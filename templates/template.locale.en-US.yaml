@@ -3,10 +3,10 @@
 PackageIdentifier: $PackageID
 PackageVersion: $VersionFull
 PackageLocale: en-US
-Publisher: The PHP Group
+Publisher: PHP Group
 PublisherUrl: https://www.php.net/
 PublisherSupportUrl: https://www.php.net/support
-Author: The PHP Group
+Author: PHP Group
 PackageName: $PackageName
 PackageUrl: https://windows.php.net/
 License: PHP-3.01

@@ -3,10 +3,10 @@
 PackageIdentifier: PHP.PHP.7.4
 PackageVersion: 7.4.33
 PackageLocale: en-US
-Publisher: The PHP Group
+Publisher: PHP Group
 PublisherUrl: https://www.php.net/
 PublisherSupportUrl: https://www.php.net/support
-Author: The PHP Group
+Author: PHP Group
 PackageName: PHP 7.4
 PackageUrl: https://windows.php.net/
 License: PHP-3.01
